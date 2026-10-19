@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Дымка — кофейня и обжарка (демо-проект)</title>
+<style>
+:root{--bg:#14100d;--panel:#1d1712;--line:#33291f;--cream:#f2e8d9;--muted:#a89a88;--cu:#e0924f;--cu2:#b8672c}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--cream);font:400 16px/1.55 Inter,system-ui,sans-serif;max-width:760px;margin:0 auto}
+.serif{font-family:'DejaVu Serif',Georgia,serif}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:24px 24px 8px}
+.logo{font:700 28px 'DejaVu Serif',serif;letter-spacing:.02em}
+.logo span{color:var(--cu)}
+.burger{width:46px;height:46px;border:1px solid var(--line);border-radius:50%;display:grid;place-content:center;gap:5px}
+.burger i{display:block;width:18px;height:2px;background:var(--cream)}
+.hero{padding:26px 24px 20px;position:relative;overflow:hidden;background:radial-gradient(420px 320px at 80% 70%,rgba(224,146,79,.22),transparent 70%)}
+.kicker{font:600 12px Inter;letter-spacing:.24em;text-transform:uppercase;color:var(--cu)}
+h1{font:700 clamp(46px,13vw,84px)/1.02 'DejaVu Serif',serif;margin:16px 0 18px;letter-spacing:-.01em}
+h1 em{color:var(--cu);font-style:italic}
+.lead{color:var(--muted);max-width:32ch;font-size:17px}
+.cta{display:flex;gap:12px;margin:28px 0 8px;flex-wrap:wrap}
+.btn{padding:16px 26px;border-radius:999px;font:600 15px Inter;border:1px solid transparent;display:inline-block}
+.btn.pri{background:var(--cu);color:#1a110a}
+.btn.ghost{border-color:#4a3c30;color:var(--cream)}
+.art{display:block;margin:10px auto 0}
+.strip{border-block:1px solid var(--line);padding:16px 0;overflow:hidden;white-space:nowrap;font:600 13px Inter;letter-spacing:.3em;color:var(--muted)}
+.strip b{color:var(--cu);margin:0 14px}
+section{padding:54px 24px 10px}
+h2{font:700 38px/1.1 'DejaVu Serif',serif;margin:10px 0 24px}
+.menu{display:grid;gap:14px}
+.item{background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:22px 22px;display:grid;grid-template-columns:1fr auto;gap:4px 16px}
+.item h3{font:700 22px 'DejaVu Serif',serif}
+.item p{color:var(--muted);font-size:14px;grid-column:1}
+.price{font:700 24px 'DejaVu Serif',serif;color:var(--cu);grid-row:1/3;grid-column:2;align-self:center}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:6px}
+.stat{border-top:1px solid var(--cu2);padding-top:14px}
+.stat b{display:block;font:700 40px 'DejaVu Serif',serif;color:var(--cream)}
+.stat span{font-size:13px;color:var(--muted)}
+.about p{color:var(--muted);max-width:44ch}
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:26px}
+.tile{height:190px;border-radius:22px;position:relative;overflow:hidden}
+.t1{background:radial-gradient(circle at 30% 30%,#e0924f,#6b3a18 60%,#2a170b)}
+.t2{background:radial-gradient(circle at 70% 70%,#f2e8d9,#9a7a58 55%,#3a2a1c)}
+.tile i{position:absolute;width:44px;height:64px;border-radius:50%;background:rgba(20,12,6,.55);transform:rotate(30deg)}
+.tile i:nth-child(1){left:24px;top:30px}.tile i:nth-child(2){left:90px;top:80px;transform:rotate(-20deg)}
+.tile i:nth-child(3){left:40px;top:110px;transform:rotate(55deg)}.tile i:nth-child(4){left:120px;top:20px;transform:rotate(10deg)}
+.quote{margin:44px 24px 0;padding:30px 26px;border-radius:26px;background:linear-gradient(160deg,#2a1d12,#1b140e);border:1px solid var(--line)}
+.quote p{font:italic 400 24px/1.35 'DejaVu Serif',serif}
+.quote small{display:block;margin-top:14px;color:var(--muted)}
+.foot{margin:44px 24px 40px;padding:34px 26px;border-radius:30px;background:var(--cu);color:#1a110a}
+.foot h2{margin:0 0 8px;color:#1a110a}
+.foot p{font-weight:500;margin-bottom:20px}
+.foot .btn{background:#1a110a;color:var(--cream)}
+.copy{text-align:center;color:var(--muted);font-size:12px;padding-bottom:30px}
+</style>
+</head>
+<body>
+<header class="nav">
+  <div class="logo">Дымка<span>.</span></div>
+  <div class="burger"><i></i><i></i></div>
+</header>
+
+<div class="hero">
+  <div class="kicker">кофейня и обжарка</div>
+  <h1>Кофе, ради которого <em>стоит проснуться</em></h1>
+  <p class="lead">Обжариваем зерно каждую неделю и завариваем так, как оно того заслуживает.</p>
+  <div class="cta"><a class="btn pri">Забронировать стол</a><a class="btn ghost">Смотреть меню</a></div>
+  <svg class="art" width="300" height="260" viewBox="0 0 300 260">
+    <defs>
+      <linearGradient id="cup" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f2e8d9"/><stop offset="1" stop-color="#b79d7c"/></linearGradient>
+      <linearGradient id="cof" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7a4520"/><stop offset="1" stop-color="#3a1d0a"/></linearGradient>
+    </defs>
+    <ellipse cx="150" cy="226" rx="120" ry="20" fill="#000" opacity=".35"/>
+    <ellipse cx="150" cy="214" rx="112" ry="22" fill="url(#cup)"/>
+    <path d="M70 110 H230 V150 C230 196 196 218 150 218 C104 218 70 196 70 150 Z" fill="url(#cup)"/>
+    <path d="M230 126 C268 124 268 178 226 178" fill="none" stroke="url(#cup)" stroke-width="14" stroke-linecap="round"/>
+    <ellipse cx="150" cy="110" rx="80" ry="16" fill="#e8dac4"/>
+    <ellipse cx="150" cy="112" rx="70" ry="12" fill="url(#cof)"/>
+    <path d="M150 112 c-18 -6 -10 -16 0 -10 c10 -6 18 4 0 10z" fill="#c98a52" opacity=".8"/>
+    <g fill="none" stroke="#e0924f" stroke-width="5" stroke-linecap="round" opacity=".9">
+      <path d="M118 84 C100 62 138 50 118 24"/><path d="M152 80 C132 54 172 42 152 12"/><path d="M186 84 C168 64 204 52 186 28"/>
+    </g>
+  </svg>
+</div>
+
+<div class="strip">ОБЖАРКА<b>◆</b>ФИЛЬТР<b>◆</b>ЭСПРЕССО<b>◆</b>КРУАССАНЫ<b>◆</b>ОБЖАРКА<b>◆</b>ФИЛЬТР<b>◆</b>ЭСПРЕССО</div>
+
+<section>
+  <div class="kicker">меню</div>
+  <h2>Что мы варим</h2>
+  <div class="menu">
+    <div class="item"><h3>Эспрессо-тоник</h3><p>Цитрус, лёд и тёмная обжарка</p><div class="price">290 ₽</div></div>
+    <div class="item"><h3>Флэт уайт</h3><p>Двойной эспрессо и шёлковое молоко</p><div class="price">320 ₽</div></div>
+    <div class="item"><h3>Фильтр дня</h3><p>Сорт недели, молотый на ваших глазах</p><div class="price">350 ₽</div></div>
+  </div>
+</section>
+
+<section class="about">
+  <div class="kicker">о нас</div>
+  <h2>Маленькая обжарка в центре города</h2>
+  <p>Мы выбираем зерно у небольших ферм и обжариваем партиями, чтобы вкус всегда был свежим.</p>
+  <div class="stats" style="margin-top:28px">
+    <div class="stat"><b>12</b><span>сортов зерна</span></div>
+    <div class="stat"><b>7</b><span>дней от обжарки</span></div>
+    <div class="stat"><b>40</b><span>мест в зале</span></div>
+  </div>
+  <div class="tiles"><div class="tile t1"><i></i><i></i><i></i><i></i></div><div class="tile t2"><i></i><i></i><i></i><i></i></div></div>
+</section>
+
+<div class="quote">
+  <p>«Лучший флэт уайт в городе — и единственное место, где хочется остаться после кофе».</p>
+  <small>— гость кофейни</small>
+</div>
+
+<div class="foot">
+  <h2>Ждём вас каждый день</h2>
+  <p>Ежедневно с 8:00 до 22:00 · Центр города</p>
+  <a class="btn">Забронировать стол</a>
+</div>
+<div class="copy">Демо-проект · вымышленный бренд</div>
+</body>
+</html>
