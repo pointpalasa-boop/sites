@@ -1,0 +1,88 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Проверь свой сайт за 10 минут</title>
+<meta name="description" content="Бесплатный чек-лист из 15 пунктов: где ваш сайт теряет заявки. Проверка онлайн или PDF.">
+<style>
+:root{--paper:#f0f4fa;--ink:#0e1628;--blue:#2e50ff;--lime:#ffe25c;--mut:#586482;--line:#d5dcec;--card:#fff}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);background:var(--paper);line-height:1.5}
+h1,h2,h3{font-family:"Inter Display",Inter,system-ui,sans-serif;line-height:1.08;letter-spacing:-.02em}
+
+a{color:inherit}
+.wrap{max-width:760px;margin:0 auto;padding:0 20px}
+.hero{background:var(--ink);color:#fff;padding:64px 0 56px}
+.hero h1{font-size:clamp(40px,9vw,72px);font-weight:900}
+.hero h1 span{color:var(--lime)}
+.hero p{font-size:19px;color:#b8c2de;margin:18px 0 28px;max-width:560px}
+.btn{display:inline-block;background:var(--lime);color:var(--ink);font-weight:800;padding:16px 26px;border-radius:14px;text-decoration:none;font-size:17px;min-height:48px}
+.btn:focus-visible,.it:focus-within{outline:3px solid var(--blue);outline-offset:3px}
+.tool{padding:48px 0}
+.tool>.wrap>h2{font-size:clamp(28px,6vw,40px);font-weight:900;margin-bottom:6px}
+.lead{color:var(--mut);margin-bottom:24px}
+.grp h2{font-size:18px;font-weight:800;color:var(--blue);margin:22px 0 8px}
+.it{display:flex;gap:14px;align-items:flex-start;padding:14px;background:var(--card);border:1.5px solid var(--line);border-radius:14px;margin-bottom:8px;cursor:pointer;min-height:56px}
+.chk{position:absolute;opacity:0;pointer-events:none}
+.box{flex:none;width:26px;height:26px;border:2.5px solid var(--ink);border-radius:8px;margin-top:1px;display:grid;place-items:center;transition:background .15s}
+.chk:checked+.box{background:var(--blue);border-color:var(--blue)}
+.chk:checked+.box::after{content:"";width:7px;height:13px;border:solid #fff;border-width:0 3px 3px 0;transform:rotate(45deg) translate(-1px,-1px)}
+.tx b{display:block;font-size:16px}.tx small{display:block;color:var(--mut);font-size:14px;margin-top:2px}
+.score{position:sticky;bottom:0;background:var(--ink);color:#fff;padding:14px 0;margin-top:24px;z-index:5}
+.score .wrap{display:flex;gap:16px;align-items:center}
+.n{font-size:32px;font-weight:900;color:var(--lime);white-space:nowrap}
+.verdict b{display:block}.verdict span{font-size:14px;color:#b8c2de}
+.levels{padding:40px 0}.lv{display:flex;gap:14px;background:var(--card);border:1.5px solid var(--line);border-radius:14px;padding:14px;margin-bottom:10px;align-items:center}
+.rg{flex:none;width:76px;text-align:center;font-weight:900;color:#fff;background:var(--blue);border-radius:10px;padding:10px 0}
+.lv p{color:var(--mut);font-size:15px}
+.cta{background:var(--blue);color:#fff;padding:48px 0 56px}
+.cta h2{font-size:clamp(28px,6vw,40px);font-weight:900}.cta p{margin:10px 0 22px;color:#dde3ff}
+.note{font-size:13px;color:var(--mut);padding:20px 0 40px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style></head><body>
+<header class="hero"><div class="wrap"><h1>Проверь свой сайт <span>за 10 минут</span></h1>
+<p>15 вопросов о первом экране, телефоне, читаемости, доверии и заявке. Отметьте, что у вас уже есть, и увидите, где сайт теряет клиентов.</p>
+<a class="btn" href="checklist.pdf" download>Скачать PDF</a></div></header>
+<main>
+<section class="tool"><div class="wrap"><h2>Проверка онлайн</h2>
+<p class="lead">Откройте свой сайт на телефоне в соседней вкладке и отмечайте пункты. Ничего не отправляется: подсчёт идёт в вашем браузере.</p>
+<section class="grp"><h2>Первый экран: 5 секунд</h2>
+<label class="it"><input type="checkbox" class="chk"><span class="box"></span><span class="tx"><b>1. Понятно, чем вы занимаетесь</b><small>Заголовок отвечает на вопрос «что это?» без прокрутки и без общих слов вроде «лучшие решения».</small></span></label>
+<label class="it"><input type="checkbox" class="chk"><span class="box"></span><span class="tx"><b>2. Видно, для кого сайт</b><small>Есть уточнение: для кого, в каком городе, для какой задачи.</small></span></label>
+<label class="it"><input type="checkbox" class="chk"><span class="box"></span><span class="tx"><b>3. Есть одна главная кнопка</b><small>Одно заметное действие: «Записаться», «Заказать», «Позвонить». Не пять равных кнопок.</small></span></label>
+</section>
+<section class="grp"><h2>Телефон</h2>
+<label class="it"><input type="checkbox" class="chk"><span class="box"></span><span class="tx"><b>4. Текст читается без увеличения</b><small>Основной текст не мельче 16 px. Если приходится щуриться или растягивать пальцами, это провал.</small></span></label>
+<label class="it"><input type="checkbox" class="chk"><span class="box"></span><span class="tx"><b>5. Кнопки удобно нажимать</b><small>Нажимаемая область не меньше 44 на 44 px, между кнопками есть воздух.</small></span></label>
+<label class="it"><input type="checkbox" class="chk"><span class="box"></span><span class="tx"><b>6. Телефон и почта кликабельны</b><small>Номер оформлен как ссылка (tel:), по нажатию открывается набор номера.</small></span></label>
+</section>
+<section class="grp"><h2>Читаемость</h2>
+<label class="it"><input type="checkbox" class="chk"><span class="box"></span><span class="tx"><b>7. Контраст текста не меньше 4,5 : 1</b><small>Серый на бежевом выглядит стильно и не читается. Проверьте в WebAIM Contrast Checker.</small></span></label>
+<label class="it"><input type="checkbox" class="chk"><span class="box"></span><span class="tx"><b>8. Заголовки отличаются от текста</b><small>Размером и весом. Абзацы короткие, не больше 3–4 строк на телефоне.</small></span></label>
+<label class="it"><input type="checkbox" class="chk"><span class="box"></span><span class="tx"><b>9. Нет горизонтальной прокрутки</b><small>На телефоне страница не уезжает вбок и ничего не обрезано по краю.</small></span></label>
+</section>
+<section class="grp"><h2>Доверие</h2>
+<label class="it"><input type="checkbox" class="chk"><span class="box"></span><span class="tx"><b>10. Есть доказательство</b><small>Цифра, отзыв с именем, примеры работ или логотипы клиентов. Что-то, что можно проверить.</small></span></label>
+<label class="it"><input type="checkbox" class="chk"><span class="box"></span><span class="tx"><b>11. Видна цена или хотя бы «от»</b><small>Если цены нет совсем, часть людей уйдёт, не спросив. Достаточно диапазона или примера расчёта.</small></span></label>
+<label class="it"><input type="checkbox" class="chk"><span class="box"></span><span class="tx"><b>12. В подвале есть реквизиты</b><small>Название, ИНН или ОГРНИП, адрес или город, способ связи. Это признак живой компании.</small></span></label>
+</section>
+<section class="grp"><h2>Заявка</h2>
+<label class="it"><input type="checkbox" class="chk"><span class="box"></span><span class="tx"><b>13. Форма короткая</b><small>Имя и телефон или мессенджер. Каждое лишнее поле снижает число заявок.</small></span></label>
+<label class="it"><input type="checkbox" class="chk"><span class="box"></span><span class="tx"><b>14. Есть подтверждение после отправки</b><small>Человек видит «Заявка принята, отвечу в течение ...». Иначе нажмёт второй раз или уйдёт.</small></span></label>
+<label class="it"><input type="checkbox" class="chk"><span class="box"></span><span class="tx"><b>15. Связаться можно не только формой</b><small>Мессенджер или телефон рядом с формой. Не все любят заполнять поля.</small></span></label>
+</section>
+</div>
+<div class="score" role="status" aria-live="polite"><div class="wrap"><div class="n" id="n">0 / 15</div>
+<div class="verdict"><b id="vt">Начните отмечать пункты</b><span id="vd">Результат появится здесь</span></div></div></div></section>
+<section class="levels"><div class="wrap"><h2 style="font-size:26px;font-weight:900;margin-bottom:14px">Что значит результат</h2><div class="lv"><div class="rg">13–15</div><div><b>Хорошая база</b><p>Сайт делает свою работу. Дальше помогают тесты заголовка и кнопки.</p></div></div><div class="lv"><div class="rg">8–12</div><div><b>Есть что исправить</b><p>Заявки теряются на мелочах. Начните с пунктов первого экрана и телефона: они дают больше всего.</p></div></div><div class="lv"><div class="rg">0–7</div><div><b>Сайт теряет заявки</b><p>Большинство посетителей уходит, не поняв предложение. Проще пересобрать первый экран, чем латать.</p></div></div></div></section>
+<section class="cta"><div class="wrap"><h2>Хотите, разберу ваш сайт?</h2>
+<p>Пришлите ссылку и результат. Скажу, какие 2–3 правки дадут больше всего.</p>
+<a class="btn" href="#">[ваш Telegram]</a></div></section>
+<div class="wrap note">Автор: [ваше имя]. Пороги (16 px, 44 px, контраст 4,5 : 1) — общепринятые ориентиры для удобства чтения и нажатий на телефоне. Чек-лист не заменяет полного аудита.</div>
+</main>
+<script>
+var LV=[{'min': 13, 't': 'Хорошая база', 'd': 'Сайт делает свою работу.'}, {'min': 8, 't': 'Есть что исправить', 'd': 'Начните с первого экрана и телефона.'}, {'min': 0, 't': 'Сайт теряет заявки', 'd': 'Проще пересобрать первый экран, чем латать.'}];
+var cs=document.querySelectorAll('.chk'),n=document.getElementById('n'),vt=document.getElementById('vt'),vd=document.getElementById('vd');
+function upd(){var c=0;cs.forEach(function(x){if(x.checked)c++});n.textContent=c+' / 15';
+if(c===0){vt.textContent='Начните отмечать пункты';vd.textContent='Результат появится здесь';return}
+for(var i=0;i<LV.length;i++){if(c>=LV[i].min){vt.textContent=LV[i].t;vd.textContent=LV[i].d;break}}}
+cs.forEach(function(x){x.addEventListener('change',upd)});
+</script></body></html>
