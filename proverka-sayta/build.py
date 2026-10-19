@@ -5,8 +5,9 @@ import html, pathlib
 from playwright.sync_api import sync_playwright
 
 HERE = pathlib.Path(__file__).parent
-CONTACT = "[ваш Telegram]"          # <-- подставьте свой @ник или ссылку
-AUTHOR = "[ваше имя]"               # <-- и имя
+CONTACT = "@Dim4ik0"
+CONTACT_URL = "https://t.me/Dim4ik0"
+PAGE_URL = "https://pointpalasa-boop.github.io/sites/proverka-sayta/"
 
 GROUPS = [
     ("Первый экран: 5 секунд", [
@@ -116,14 +117,14 @@ def pdf_html():
 <div class="pg cover"><div><span class="pill">Чек-лист · {TOTAL} пунктов</span>
 <h1>Проверь свой сайт<br><span>за 10 минут</span></h1>
 <p class="sub">Откройте свой сайт на телефоне и отметьте пункты. По итогам станет ясно, где теряются заявки и что чинить первым.</p></div>
-<div class="meta">{html.escape(AUTHOR)} · разработка сайтов · {html.escape(CONTACT)}</div></div>
+<div class="meta">Разработка сайтов · {html.escape(CONTACT)} · pointpalasa-boop.github.io/sites/proverka-sayta</div></div>
 <div class="pg"><div class="ph">Отмечайте то, что у вас уже есть</div>{part(0, 3)}<div class="foot"><span>Проверь свой сайт за 10 минут</span><span>2</span></div></div>
 <div class="pg"><div class="ph">Продолжаем</div>{part(3, 5)}
 <div class="how"><b>Как проверять</b><ol><li>Откройте сайт на телефоне, не на компьютере: так на него приходит большинство людей.</li><li>Первые три пункта проверьте за 5 секунд, не листая.</li><li>Контраст проверьте на webaim.org/resources/contrastchecker (вставьте цвет текста и фона).</li><li>Отмечайте пункт, только если уверены на «да». Сомневаетесь — не отмечайте.</li></ol></div>
 <div class="foot"><span>Проверь свой сайт за 10 минут</span><span>3</span></div></div>
 <div class="pg"><div class="ph">Ваш результат: сколько пунктов отмечено из {TOTAL}</div>{levels_html()}
 <div class="how"><b>С чего начать исправлять</b><ol><li>Сначала первый экран (пункты 1–3): он влияет на все остальные.</li><li>Потом телефон (4–6): большая часть посетителей именно там.</li><li>Контраст и читаемость (7–9) обычно правятся за час.</li><li>Доверие и заявка (10–15) дают рост, когда база уже в порядке.</li></ol></div>
-<div class="cta"><h3>Хотите, разберу ваш сайт?</h3><p>Пришлите ссылку и результат чек-листа. Скажу, какие 2–3 правки дадут больше всего.</p><span class="ct">{html.escape(CONTACT)}</span></div>
+<div class="cta"><h3>Хотите, разберу ваш сайт?</h3><p>Пришлите ссылку и результат чек-листа. Скажу, какие 2–3 правки дадут больше всего.</p><span class="ct">{html.escape(CONTACT)}</span><p style="margin-top:12px">Онлайн-версия: {PAGE_URL}</p></div>
 <div class="foot"><span>Проверь свой сайт за 10 минут</span><span>4</span></div></div>
 </body></html>"""
 
@@ -165,6 +166,7 @@ def page_html():
     return f"""<!doctype html><html lang="ru"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Проверь свой сайт за 10 минут</title>
+<link rel="canonical" href="{PAGE_URL}">
 <meta name="description" content="Бесплатный чек-лист из {TOTAL} пунктов: где ваш сайт теряет заявки. Проверка онлайн или PDF.">
 <style>{PAGE_CSS}</style></head><body>
 <header class="hero"><div class="wrap"><h1>Проверь свой сайт <span>за 10 минут</span></h1>
@@ -180,8 +182,8 @@ def page_html():
 <section class="levels"><div class="wrap"><h2 style="font-size:26px;font-weight:900;margin-bottom:14px">Что значит результат</h2>{levels_html()}</div></section>
 <section class="cta"><div class="wrap"><h2>Хотите, разберу ваш сайт?</h2>
 <p>Пришлите ссылку и результат. Скажу, какие 2–3 правки дадут больше всего.</p>
-<a class="btn" href="CONTACT_LINK">{html.escape(CONTACT)}</a></div></section>
-<div class="wrap note">Автор: {html.escape(AUTHOR)}. Пороги (16 px, 44 px, контраст 4,5\u00a0:\u00a01) — общепринятые ориентиры для удобства чтения и нажатий на телефоне. Чек-лист не заменяет полного аудита.</div>
+<a class="btn" href="{CONTACT_URL}">{html.escape(CONTACT)}</a></div></section>
+<div class="wrap note">Обратная связь и вопросы: <a href="{CONTACT_URL}">{html.escape(CONTACT)}</a>. Пороги (16 px, 44 px, контраст 4,5\u00a0:\u00a01) — общепринятые ориентиры для удобства чтения и нажатий на телефоне. Чек-лист не заменяет полного аудита.</div>
 </main>
 <script>
 var LV={[{"min":13,"t":"Хорошая база","d":"Сайт делает свою работу."},{"min":8,"t":"Есть что исправить","d":"Начните с первого экрана и телефона."},{"min":0,"t":"Сайт теряет заявки","d":"Проще пересобрать первый экран, чем латать."}]!r};
@@ -194,7 +196,7 @@ cs.forEach(function(x){{x.addEventListener('change',upd)}});
 
 
 def main():
-    page = page_html().replace("CONTACT_LINK", "#")
+    page = page_html()
     (HERE / "index.html").write_text(page, encoding="utf-8")
     (HERE / "_pdf.html").write_text(pdf_html(), encoding="utf-8")
     with sync_playwright() as p:
