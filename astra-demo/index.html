@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Астра-демо — макет сайта стоматологии</title>
+<meta name="robots" content="noindex,nofollow">
+<meta name="description" content="Демонстрационный макет сайта круглосуточной стоматологии. Все данные условные.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#070d1a; --bg2:#0b1426; --card:#101b33; --line:rgba(255,255,255,.08);
+  --text:#e9eefb; --muted:#8e9ab5; --accent:#2de2c4; --accent2:#4f8cff; --warm:#ffcf6b;
+  --r:22px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Manrope',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1160px,100% - 40px);margin-inline:auto}
+h1,h2,h3{font-family:'Unbounded','Manrope',sans-serif;font-weight:600;line-height:1.15;letter-spacing:-.01em}
+h2{font-size:clamp(26px,4vw,42px);margin-bottom:14px}
+.eyebrow{display:inline-flex;gap:8px;align-items:center;font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:16px}
+.eyebrow::before{content:"";width:22px;height:2px;background:var(--accent);border-radius:2px}
+.lead{color:var(--muted);max-width:620px;font-size:18px}
+section{padding:96px 0;position:relative}
+
+/* header */
+header{position:fixed;inset:0 0 auto 0;z-index:50;backdrop-filter:blur(16px);background:rgba(7,13,26,.72);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:72px;gap:20px}
+.logo{display:flex;align-items:center;gap:12px;font-family:'Unbounded';font-weight:600;font-size:20px}
+.logo i{width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:grid;place-items:center;color:#06101f;font-style:normal;font-size:20px}
+nav ul{display:flex;gap:30px;list-style:none;font-size:15px;font-weight:600;color:var(--muted)}
+nav a:hover{color:var(--text)}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 26px;border-radius:999px;font-weight:700;font-size:16px;border:0;cursor:pointer;transition:.25s}
+.btn-main{background:linear-gradient(135deg,var(--accent),#18c6e0);color:#04121a;box-shadow:0 10px 40px -10px rgba(45,226,196,.6)}
+.btn-main:hover{transform:translateY(-2px);box-shadow:0 14px 46px -8px rgba(45,226,196,.8)}
+.btn-ghost{border:1px solid var(--line);background:rgba(255,255,255,.04);color:var(--text)}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+.nav .btn{padding:10px 20px;font-size:15px}
+
+/* hero */
+.hero{padding:170px 0 90px;background:
+  radial-gradient(700px 420px at 85% 10%,rgba(79,140,255,.28),transparent 70%),
+  radial-gradient(600px 420px at 10% 90%,rgba(45,226,196,.18),transparent 70%),var(--bg)}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}
+.live{display:inline-flex;align-items:center;gap:10px;padding:8px 16px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.04);font-size:14px;font-weight:600;margin-bottom:26px}
+.dot{width:9px;height:9px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 0 rgba(45,226,196,.7);animation:pulse 2s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 12px rgba(45,226,196,0)}100%{box-shadow:0 0 0 0 rgba(45,226,196,0)}}
+.hero h1{font-size:clamp(34px,5.6vw,66px);margin-bottom:24px}
+.hero h1 span{background:linear-gradient(120deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{font-size:19px;color:var(--muted);max-width:560px;margin-bottom:34px}
+.cta{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:44px}
+.stats{display:flex;gap:40px;flex-wrap:wrap}
+.stats b{display:block;font-family:'Unbounded';font-size:28px}
+.stats small{color:var(--muted);font-size:14px}
+.hero-card{background:linear-gradient(160deg,rgba(255,255,255,.09),rgba(255,255,255,.02));border:1px solid var(--line);border-radius:30px;padding:34px;position:relative;backdrop-filter:blur(10px)}
+.hero-card::after{content:"";position:absolute;inset:-1px;border-radius:30px;padding:1px;background:linear-gradient(160deg,rgba(45,226,196,.6),transparent 40%);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
+.hero-card h3{font-size:20px;margin-bottom:6px}
+.hero-card .sub{color:var(--muted);font-size:14px;margin-bottom:22px}
+.mini{display:flex;justify-content:space-between;gap:16px;padding:15px 0;border-top:1px solid var(--line);font-size:15px}
+.mini span:last-child{font-weight:800;color:var(--accent);white-space:nowrap}
+.tooth{position:absolute;right:-18px;top:-34px;width:84px;height:84px;border-radius:26px;background:linear-gradient(135deg,var(--warm),#ff9d5c);display:grid;place-items:center;font-size:42px;transform:rotate(10deg);box-shadow:0 20px 50px -12px rgba(255,157,92,.6)}
+
+/* marquee */
+.strip{background:var(--bg2);border-block:1px solid var(--line);padding:18px 0;overflow:hidden}
+.strip div{display:flex;gap:48px;white-space:nowrap;animation:slide 32s linear infinite;color:var(--muted);font-weight:600;font-size:15px;width:max-content}
+.strip span::before{content:"✦";color:var(--accent);margin-right:14px}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+/* services */
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:48px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:30px;transition:.3s;position:relative;overflow:hidden}
+.card:hover{transform:translateY(-6px);border-color:rgba(45,226,196,.45)}
+.card .ic{width:54px;height:54px;border-radius:16px;background:rgba(45,226,196,.12);display:grid;place-items:center;font-size:26px;margin-bottom:20px}
+.card h3{font-size:18px;margin-bottom:10px}
+.card p{color:var(--muted);font-size:15px;margin-bottom:18px}
+.price{font-weight:800;color:var(--accent);font-size:17px}
+.card.hot{background:linear-gradient(160deg,#12305a,#0f2146);border-color:rgba(79,140,255,.5)}
+.tag{position:absolute;top:18px;right:18px;background:var(--warm);color:#2a1a00;font-size:12px;font-weight:800;padding:4px 12px;border-radius:99px}
+
+/* implants */
+.imp{background:linear-gradient(180deg,var(--bg),var(--bg2))}
+.imp-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.imp ul{list-style:none;margin:28px 0 34px;display:grid;gap:14px}
+.imp li{display:flex;gap:14px;color:var(--muted)}
+.imp li::before{content:"✓";flex:none;width:26px;height:26px;border-radius:50%;background:rgba(45,226,196,.15);color:var(--accent);display:grid;place-items:center;font-weight:800;font-size:14px;margin-top:2px}
+.imp li b{color:var(--text)}
+.plist{background:var(--card);border:1px solid var(--line);border-radius:28px;padding:12px 32px}
+.row{display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding:18px 0;border-bottom:1px dashed var(--line)}
+.row:last-child{border:0}
+.row div small{display:block;color:var(--muted);font-size:13px}
+.row b{white-space:nowrap;font-family:'Unbounded';font-size:16px;color:var(--accent)}
+
+/* price table */
+.tabs{display:flex;flex-wrap:wrap;gap:10px;margin:36px 0 26px}
+.tab{padding:10px 22px;border-radius:99px;border:1px solid var(--line);background:transparent;color:var(--muted);font:600 15px 'Manrope';cursor:pointer;transition:.2s}
+.tab.on,.tab:hover{background:var(--accent);color:#04121a;border-color:var(--accent)}
+.table{background:var(--card);border:1px solid var(--line);border-radius:26px;padding:10px 32px}
+.table .row{display:none}
+.table .row.show{display:flex}
+.note{margin-top:18px;color:var(--muted);font-size:14px}
+
+/* why */
+.why{background:var(--bg2)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:48px}
+.step{padding:28px;border-radius:var(--r);border:1px solid var(--line);background:rgba(255,255,255,.03)}
+.step em{font-family:'Unbounded';font-style:normal;font-size:34px;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.step h3{font-size:17px;margin:12px 0 8px}
+.step p{color:var(--muted);font-size:15px}
+
+/* reviews */
+.rev-head{display:flex;justify-content:space-between;align-items:end;flex-wrap:wrap;gap:20px}
+.score{display:flex;align-items:center;gap:16px}
+.score b{font-family:'Unbounded';font-size:54px;line-height:1}
+.score span{color:var(--warm);letter-spacing:3px;display:block}
+.score small{color:var(--muted)}
+.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:44px}
+.rev{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:28px}
+.rev .st{color:var(--warm);letter-spacing:3px;font-size:14px;margin-bottom:14px}
+.rev p{color:#cdd6ec;font-size:15px;margin-bottom:20px}
+.rev .who{display:flex;gap:12px;align-items:center;font-weight:700;font-size:15px}
+.rev .av{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--accent2),var(--accent));display:grid;place-items:center;color:#04121a;font-weight:800}
+.rev small{display:block;color:var(--muted);font-weight:500;font-size:13px}
+
+/* contacts */
+.contact{background:radial-gradient(700px 400px at 80% 0,rgba(79,140,255,.22),transparent 70%),var(--bg)}
+.c-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:44px}
+.c-box{background:var(--card);border:1px solid var(--line);border-radius:28px;padding:36px}
+.c-item{display:flex;gap:16px;margin-bottom:26px}
+.c-item i{flex:none;width:48px;height:48px;border-radius:14px;background:rgba(45,226,196,.12);display:grid;place-items:center;font-style:normal;font-size:22px}
+.c-item small{color:var(--muted);display:block;font-size:13px}
+.c-item b{font-size:18px}
+.big-phone{font-family:'Unbounded';font-size:clamp(22px,3vw,30px);color:var(--accent)}
+.alert{background:linear-gradient(135deg,rgba(255,207,107,.14),rgba(255,157,92,.08));border:1px solid rgba(255,207,107,.35);border-radius:28px;padding:36px;display:flex;flex-direction:column;justify-content:center;gap:18px}
+.alert h3{font-size:24px}
+.alert p{color:#d8cfae}
+
+footer{padding:34px 0;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+
+.call-fab{position:fixed;right:18px;bottom:18px;z-index:60;display:none;width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,var(--accent),#18c6e0);color:#04121a;place-items:center;font-size:26px;box-shadow:0 12px 34px -6px rgba(45,226,196,.8)}
+
+.demo-badge{position:fixed;left:14px;bottom:14px;z-index:70;background:var(--warm);color:#2a1a00;font-weight:800;font-size:12px;padding:8px 14px;border-radius:99px;box-shadow:0 8px 24px -8px rgba(0,0,0,.6)}
+.reveal{opacity:0;transform:translateY(28px);transition:.8s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+
+@media(max-width:960px){
+  nav ul{display:none}
+  .hero-grid,.imp-grid,.c-grid{grid-template-columns:1fr}
+  .grid3,.reviews{grid-template-columns:1fr 1fr}
+  .steps{grid-template-columns:1fr 1fr}
+  section{padding:70px 0}
+  .tooth{right:10px}
+  .call-fab{display:grid}
+}
+@media(max-width:620px){
+  .grid3,.reviews,.steps{grid-template-columns:1fr}
+  .nav .btn span{display:none}
+  .hero{padding-top:130px}
+  .table,.plist{padding:6px 20px}
+  .row{flex-direction:column;gap:4px}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="#top" class="logo"><i>✦</i>Астра-демо</a>
+    <nav><ul>
+      <li><a href="#services">Услуги</a></li>
+      <li><a href="#implants">Имплантация</a></li>
+      <li><a href="#prices">Цены</a></li>
+      <li><a href="#reviews">Отзывы</a></li>
+      <li><a href="#contacts">Контакты</a></li>
+    </ul></nav>
+    <a class="btn btn-main" href="#contacts">📞 <span>+7 (000) 000-00-00</span></a>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="live"><i class="dot"></i> Круглосуточная стоматология · Ваш город</div>
+      <h1>Зубная боль не ждёт утра. <span>Мы — тоже.</span></h1>
+      <p>Принимаем днём и ночью, без выходных. Снимаем острую боль, лечим, удаляем, ставим швейцарские импланты. Объясняем каждый шаг и называем цену до начала лечения.</p>
+      <div class="cta">
+        <a class="btn btn-main" href="#contacts">📞 Позвонить сейчас</a>
+        <a class="btn btn-ghost" href="#prices">Смотреть цены</a>
+      </div>
+      <div class="stats">
+        <div><b>5,0</b><small>пример: рейтинг</small></div>
+        <div><b>100+</b><small>пример: число оценок</small></div>
+        <div><b>24/7</b><small>приём круглосуточно</small></div>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="tooth">🦷</div>
+      <h3>Срочная помощь</h3>
+      <p class="sub">Стоимость включает анестезию</p>
+      <div class="mini"><span>Лечение пульпита (острая боль)</span><span>5 500 ₽</span></div>
+      <div class="mini"><span>Вскрытие флюса, абсцесса</span><span>5 500 ₽</span></div>
+      <div class="mini"><span>Простое удаление зуба</span><span>6 500 ₽</span></div>
+      <div class="mini"><span>Консультация и осмотр днём</span><span>1 000 ₽</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="strip"><div>
+  <span>Импортные анестетики</span><span>Материалы США и Японии</span><span>Цифровой рентген</span><span>Швейцарская система Straumann</span><span>Паспорт импланта пациенту</span><span>Без навязывания лишних услуг</span>
+  <span>Импортные анестетики</span><span>Материалы США и Японии</span><span>Цифровой рентген</span><span>Швейцарская система Straumann</span><span>Паспорт импланта пациенту</span><span>Без навязывания лишних услуг</span>
+</div></div>
+
+<section id="services">
+  <div class="wrap">
+    <div class="eyebrow">Услуги</div>
+    <h2>Что мы лечим</h2>
+    <p class="lead">Клиника для взрослых: детского приёма нет. Консультация бесплатна, если вы остаётесь на лечение или удаление.</p>
+    <div class="grid3">
+      <div class="card reveal hot"><span class="tag">24/7</span><div class="ic">⚡</div><h3>Острая боль</h3><p>Пульпит, периодонтит, флюс, абсцесс. Снимаем боль в день обращения.</p><div class="price">от 5 500 ₽</div></div>
+      <div class="card reveal"><div class="ic">🛠</div><h3>Лечение кариеса</h3><p>Анестезия включена. Работаем с материалами США, с эконом-материалами не работаем.</p><div class="price">от 10 000 ₽</div></div>
+      <div class="card reveal"><div class="ic">🌿</div><h3>Лечение каналов</h3><p>Одно- , двух- и трёхкорневые зубы, в одно или два посещения.</p><div class="price">от 25 000 ₽</div></div>
+      <div class="card reveal"><div class="ic">✂️</div><h3>Удаление зубов</h3><p>Простое и сложное удаление, зубы мудрости, с распилом корней и швами.</p><div class="price">от 6 500 ₽</div></div>
+      <div class="card reveal"><div class="ic">✨</div><h3>Восстановление зубов</h3><p>Реставрация передних зубов и дефектов металлокерамики, штифты, коронки.</p><div class="price">от 15 000 ₽</div></div>
+      <div class="card reveal"><div class="ic">🔩</div><h3>Имплантация</h3><p>Швейцарская система Straumann с паспортом импланта и циркониевой коронкой.</p><div class="price">от 70 000 ₽</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="implants" class="imp">
+  <div class="wrap imp-grid">
+    <div class="reveal">
+      <div class="eyebrow">Имплантация</div>
+      <h2>Straumann. Швейцарская система</h2>
+      <p class="lead">Премиальные импланты с проверяемой подлинностью.</p>
+      <ul>
+        <li><span><b>Паспорт импланта.</b> После операции вы получаете документ с серийным номером и размером. По нему можно проверить подлинность.</span></li>
+        <li><span><b>Мягкотканная аугментация.</b> Ровный контур десны и защита корня искусственного зуба.</span></li>
+        <li><span><b>Костная пластика и пластика гайморовой пазухи</b> при недостатке кости.</span></li>
+        <li><span><b>Коронка из диоксида циркония</b> на винтовой фиксации.</span></li>
+      </ul>
+      <a class="btn btn-main" href="#contacts">Записаться на консультацию</a>
+    </div>
+    <div class="plist reveal">
+      <div class="row"><div>Straumann SLA<small>Швейцария, 1 шт.</small></div><b>70 000 ₽</b></div>
+      <div class="row"><div>Straumann BLT SLActive<small>Гидрофильный имплант, 1 шт.</small></div><b>75 000 ₽</b></div>
+      <div class="row"><div>Коронка ZrO₂ на швейцарский имплант<small>Винтовая фиксация</small></div><b>55 000 ₽</b></div>
+      <div class="row"><div>Металлокерамическая коронка<small>На стандартном абатменте</small></div><b>45 000 ₽</b></div>
+      <div class="row"><div>Материал для костной ткани<small>При имплантации</small></div><b>20 000 ₽</b></div>
+      <div class="row"><div>Мембрана при костной пластике</div><b>15 000 ₽</b></div>
+    </div>
+  </div>
+</section>
+
+<section id="prices">
+  <div class="wrap">
+    <div class="eyebrow">Цены</div>
+    <h2>Прозрачный прайс</h2>
+    <p class="lead">Цены на этой странице условные и приведены для демонстрации макета.</p>
+    <div class="tabs" id="tabs">
+      <button class="tab on" data-f="all">Все</button>
+      <button class="tab" data-f="pain">Острая боль</button>
+      <button class="tab" data-f="treat">Лечение</button>
+      <button class="tab" data-f="surg">Хирургия</button>
+      <button class="tab" data-f="rest">Восстановление</button>
+    </div>
+    <div class="table" id="table">
+      <div class="row show" data-c="pain"><div>Лечение острой боли (пульпит)<small>Включена 1 анестезия</small></div><b>5 500 ₽</b></div>
+      <div class="row show" data-c="pain"><div>Флюс, гнойный отёк, абсцесс<small>Анестезия, разрез, вскрытие, дренирование. Удаление отдельно</small></div><b>5 500 ₽</b></div>
+      <div class="row show" data-c="pain"><div>Консультация и осмотр врача ночью</div><b>1 500 ₽</b></div>
+      <div class="row show" data-c="pain"><div>Консультация и осмотр врача днём</div><b>1 000 ₽</b></div>
+      <div class="row show" data-c="treat"><div>Пришеечный кариес<small>Анестезия включена, материал США</small></div><b>10 000 ₽</b></div>
+      <div class="row show" data-c="treat"><div>Межзубный кариес<small>Анестезия включена, материал США</small></div><b>12 000 ₽</b></div>
+      <div class="row show" data-c="treat"><div>Лечение 1-корневого зуба по каналам + пломба<small>В 1 посещение «под ключ»</small></div><b>25 000 ₽</b></div>
+      <div class="row show" data-c="treat"><div>Лечение 2-корневого зуба по каналам + пломба<small>В 1 посещение «под ключ»</small></div><b>30 000 ₽</b></div>
+      <div class="row show" data-c="treat"><div>Лечение 3-корневого зуба по каналам + пломба<small>В 1 посещение «под ключ»</small></div><b>40 000 ₽</b></div>
+      <div class="row show" data-c="treat"><div>Временная пломба (фотокомпозит)</div><b>3 000 ₽</b></div>
+      <div class="row show" data-c="surg"><div>Простое удаление зуба<small>Включены 1 анестезия и 1 рентген</small></div><b>6 500 ₽</b></div>
+      <div class="row show" data-c="surg"><div>Сложное удаление с распилом корней</div><b>10 000–20 000 ₽</b></div>
+      <div class="row show" data-c="surg"><div>Удаление верхнего зуба мудрости<small>2 анестезии и рентген включены</small></div><b>10 000 ₽</b></div>
+      <div class="row show" data-c="surg"><div>Удаление нижнего зуба мудрости<small>2 анестезии и рентген включены</small></div><b>15 000 ₽</b></div>
+      <div class="row show" data-c="surg"><div>Резекция верхушки корня</div><b>25 000 ₽</b></div>
+      <div class="row show" data-c="surg"><div>Наложение шва (Monosyn, Германия)</div><b>1 100 ₽</b></div>
+      <div class="row show" data-c="surg"><div>Вправление вывиха нижней челюсти</div><b>10 000 ₽</b></div>
+      <div class="row show" data-c="rest"><div>Реставрация режущего края переднего зуба<small>Материал Япония, США</small></div><b>25 000 ₽</b></div>
+      <div class="row show" data-c="rest"><div>Реставрация дефектов металлокерамики<small>Материал США, цена зависит от сложности</small></div><b>от 15 000 ₽</b></div>
+      <div class="row show" data-c="rest"><div>Фиксация коронки на импортный цемент</div><b>2 500 ₽</b></div>
+      <div class="row show" data-c="rest"><div>Фиксация титанового штифта (США)</div><b>3 500 ₽</b></div>
+    </div>
+    <p class="note">Каждая дополнительная импортная анестезия — 1 000 ₽. Цифровой рентген — 600 ₽, только для пациентов клиники. Итоговая стоимость определяется врачом после осмотра.</p>
+  </div>
+</section>
+
+<section class="why">
+  <div class="wrap">
+    <div class="eyebrow">Как проходит приём</div>
+    <h2>Быстро, спокойно, понятно</h2>
+    <div class="steps">
+      <div class="step reveal"><em>01</em><h3>Звонок</h3><p>Звоните в любое время, мы на связи круглосуточно.</p></div>
+      <div class="step reveal"><em>02</em><h3>Осмотр и снимок</h3><p>Цифровой рентген и диагностика сразу при обращении.</p></div>
+      <div class="step reveal"><em>03</em><h3>План и цена</h3><p>Врач показывает ситуацию и называет стоимость до начала.</p></div>
+      <div class="step reveal"><em>04</em><h3>Лечение</h3><p>Импортная анестезия, аккуратная работа, без лишних услуг.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="reviews">
+  <div class="wrap">
+    <div class="rev-head">
+      <div><div class="eyebrow">Отзывы</div><h2>Нас рекомендуют</h2></div>
+      <div class="score"><b>5,0</b><div><span>★★★★★</span><small>пример блока рейтинга</small></div></div>
+    </div>
+    <div class="reviews">
+      <div class="rev reveal"><div class="st">★★★★★</div><p>Приехали поздно вечером с острой болью. Сделали снимок, объяснили план и сняли боль за сорок минут.</p><div class="who"><div class="av">А</div><div>Пациент А.<small>Пример отзыва</small></div></div></div>
+      <div class="rev reveal"><div class="st">★★★★★</div><p>Врач заранее назвал стоимость и ничего лишнего не предлагал. Всё спокойно и понятно.</p><div class="who"><div class="av">Б</div><div>Пациент Б.<small>Пример отзыва</small></div></div></div>
+      <div class="rev reveal"><div class="st">★★★★★</div><p>Боялась стоматологов, но здесь показывали и рассказывали каждый шаг. Было комфортно.</p><div class="who"><div class="av">В</div><div>Пациент В.<small>Пример отзыва</small></div></div></div>
+      <div class="rev reveal"><div class="st">★★★★★</div><p>Удаление прошло быстро и без боли, на следующий день уже никаких неприятных ощущений.</p><div class="who"><div class="av">Г</div><div>Пациент Г.<small>Пример отзыва</small></div></div></div>
+      <div class="rev reveal"><div class="st">★★★★★</div><p>Записали в тот же день, без очередей. Современное оборудование и вежливый персонал.</p><div class="who"><div class="av">Д</div><div>Пациент Д.<small>Пример отзыва</small></div></div></div>
+      <div class="rev reveal"><div class="st">★★★★★</div><p>Восстановили передний зуб за один визит. Результат аккуратный и естественный.</p><div class="who"><div class="av">Е</div><div>Пациент Е.<small>Пример отзыва</small></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="contacts" class="contact">
+  <div class="wrap">
+    <div class="eyebrow">Контакты</div>
+    <h2>Мы работаем круглосуточно</h2>
+    <div class="c-grid">
+      <div class="c-box reveal">
+        <div class="c-item"><i>📞</i><div><small>Телефон</small><a class="big-phone" href="#contacts">+7 (000) 000-00-00</a></div></div>
+        <div class="c-item"><i>📍</i><div><small>Адрес</small><b>Город, улица, дом (адрес клиники)</b></div></div>
+        <div class="c-item"><i>🕑</i><div><small>Режим работы</small><b>Круглосуточно</b></div></div>
+        <a class="btn btn-ghost" href="#contacts">Маршрут на карте (ссылка) →</a>
+      </div>
+      <div class="alert reveal">
+        <h3>Болит прямо сейчас?</h3>
+        <p>Не терпите до утра. Позвоните, и мы скажем, как лучше добраться и что взять с собой. Клиника взрослая, детский приём не ведётся.</p>
+        <a class="btn btn-main" href="#contacts" style="align-self:flex-start">📞 Позвонить в клинику</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap"><span>Астра-демо · демонстрационный макет, не является сайтом реальной клиники</span><span>Имеются противопоказания. Необходима консультация специалиста.</span></div></footer>
+
+<div class="demo-badge">Демонстрационный макет · данные условные</div>
+
+<a class="call-fab" href="#contacts" aria-label="Позвонить">📞</a>
+
+<script>
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+document.getElementById('tabs').addEventListener('click',e=>{
+  const b=e.target.closest('.tab');if(!b)return;
+  document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('on',t===b));
+  const f=b.dataset.f;
+  document.querySelectorAll('#table .row').forEach(r=>r.classList.toggle('show',f==='all'||r.dataset.c===f));
+});
+</script>
+</body>
+</html>
